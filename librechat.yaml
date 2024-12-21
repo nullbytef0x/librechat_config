@@ -64,16 +64,17 @@ endpoints:
       capabilities: ["execute_code", "file_search", "actions", "tools"]
     azureOpenAI:
       titleModel: "gpt-4-turbo"
-    plugins: false
-    groups:
-      - group: "my-westus" # arbitrary name
-        apiKey: "${EASTUS_API_KEY}"
-        instanceName: "startupai" # name of the resource group or instance
-        version: "2024-05-01-preview"
-        models:
-          gpt-4o:
-            deploymentName: gpt-4o
-  custom:
+      assistants: true
+      plugins: false
+      groups:
+        - group: "my-westus" # arbitrary name
+          apiKey: "${EASTUS_API_KEY}"
+          instanceName: "startupai" # name of the resource group or instance
+          version: "2024-05-01-preview"
+          models:
+            gpt-4o:
+              deploymentName: gpt-4o
+    custom:
     # OpenRouter Example
     - name: 'OpenRouter'
       # For `apiKey` and `baseURL`, you can use environment variables that you define.
