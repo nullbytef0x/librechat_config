@@ -69,6 +69,7 @@ endpoints:
       groups:
         - group: "my-westus" # arbitrary name
           apiKey: "${EASTUS_API_KEY}"
+          assistants: true
           instanceName: "startupai" # name of the resource group or instance
           version: "2024-05-01-preview"
           models:
