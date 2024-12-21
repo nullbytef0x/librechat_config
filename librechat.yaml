@@ -62,6 +62,8 @@ endpoints:
     agents:
       disableBuilder: false
       capabilities: ["execute_code", "file_search", "actions", "tools"]
+    azureAssistants:
+      capabilities: ["code_interpreter", "actions", "tools"]
     azureOpenAI:
       titleModel: "gpt-4-turbo"
       assistants: true
