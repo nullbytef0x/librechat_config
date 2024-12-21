@@ -1,0 +1,187 @@
+# Configuration version (required)
+version: 1.1.5
+
+# Cache settings: Set to true to enable caching
+cache: true
+
+# Custom interface configuration
+interface:
+  # Privacy policy settings
+  privacyPolicy:
+    externalUrl: 'https://librechat.ai/privacy-policy'
+    openNewTab: true
+    
+# Example Registration Object Structure (optional)
+registration:
+  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook']
+  # allowedDomains:
+  # - "gmail.com"
+
+# speech:
+  tts:
+     openai:
+       url: 'https://api.electronhub.top/v1/audio/speech'
+       apiKey: '${TTS_API_KEY}'
+       model: 'elevenlabs'
+       voices: ['Alice']
+
+#  
+  stt:
+     openai:
+       url: 'https://api.electronhub.top/v1/audio/translations'
+       apiKey: '${TTS_API_KEY}'
+       model: 'whisper-large-v3'
+
+rateLimits:
+   fileUploads:
+     ipMax: 100
+     ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
+     userMax: 50
+     userWindowInMinutes: 60  # Rate limit window for file uploads per user
+   conversationsImport:
+     ipMax: 100
+     ipWindowInMinutes: 60  # Rate limit window for conversation imports per IP
+     userMax: 50
+     userWindowInMinutes: 60  # Rate limit window for conversation imports per user
+
+# Definition of custom endpoints
+endpoints:
+  # assistants:
+  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
+  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
+  #   timeoutMs: 180000  # Timeout for assistant operations
+  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
+  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
+  #   # excludedIds: ["asst_excludedAssistantId"]
+  #   Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
+  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
+  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
+  #   retrievalModels: ["gpt-4-turbo-preview"]
+  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
+  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
+  custom:
+    # Groq Example
+    - name: 'groq'
+      apiKey: '${GROQ_API_KEY}'
+      baseURL: 'https://api.groq.com/openai/v1/'
+      models:
+        default:
+          [
+            'llama3-70b-8192',
+            'llama3-8b-8192',
+            'llama2-70b-4096',
+            'mixtral-8x7b-32768',
+            'gemma-7b-it',
+          ]
+        fetch: false
+      titleConvo: true
+      titleModel: 'mixtral-8x7b-32768'
+      modelDisplayLabel: 'groq'
+
+    # OpenRouter Example
+    - name: 'OpenRouter'
+      # For `apiKey` and `baseURL`, you can use environment variables that you define.
+      # recommended environment variables:
+      # Known issue: you should not use `OPENROUTER_API_KEY` as it will then override the `openAI` endpoint to use OpenRouter as well.
+      apiKey: '${OPENROUTER_KEY}'
+      baseURL: 'https://openrouter.ai/api/v1'
+      models:
+        default: ['meta-llama/llama-3-70b-instruct']
+        fetch: true
+      titleConvo: true
+      titleModel: 'meta-llama/llama-3-70b-instruct'
+      # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
+      dropParams: ['stop']
+      modelDisplayLabel: 'OpenRouter'
+      
+    # Perplexity
+    - name: "Perplexity"
+      apiKey: "${PERPLEXITY_API_KEY}"
+      baseURL: "https://fresedgpt.space/v1/"
+      models:
+        default: [
+          "claude-3-haiku-20240307",
+          "claude-3-5-haiku-20241022",
+          "claude-3-sonnet-20240229",
+          "claude-3-5-sonnet-20240620",
+          "claude-3-5-sonnet-20241022",
+          "claude-3-opus-20240229",
+          ]
+        fetch: false # fetching list of models is not supported
+      titleConvo: true
+      titleModel: "claude-3-haiku-20240307"
+      summarize: false
+      summaryModel: "claude-3-haiku-20240307"
+      forcePrompt: false
+      addParams: ["role", "content"]
+      modelDisplayLabel: "Perplexity"
+
+    # ShuttleAI API
+    - name: "ShuttleAI"
+      apiKey: "${SHUTTLEAI_API_KEY}"
+      baseURL: "https://api.shuttleai.app/v1"
+      models:
+        default: [
+          "shuttle-2-turbo", "shuttle-turbo",
+          ]
+        fetch: true
+      titleConvo: true
+      titleModel: "shuttle-2-turbo"
+      summarize: false
+      summaryModel: "shuttle-2-turbo"
+      forcePrompt: false
+      modelDisplayLabel: "ShuttleAI"
+      dropParams: ["user"]
+
+    # Fresed API
+    - name: "FresedGPT"
+      apiKey: "${fresed_API_KEY}"
+      baseURL: "https://fresedgpt.space/v1/chat/completions"
+      models:
+        default: [
+          "gpt-4-turbo-2024-04-09",
+          "chatgpt-4o-latest",
+          "gpt-4o",
+          "gpt-4o-2024-11-20",
+          "o1-preview",
+          "o1-preview-2024-09-12",
+          "blackbox-ai",
+          "llama-3.1-405b",
+          "llama-3.1-sonar-large-128k-online",
+          "jamba-1.5-large",
+          "jamba-1.5-mini",
+          "gemini-exp-1206",
+          "gemini-1.5-pro",
+          "gemini-1.5-flash-latest",
+          ]
+        fetch: true
+      titleConvo: true
+      titleModel: "shuttle-2-turbo"
+      summarize: false
+      summaryModel: "shuttle-2-turbo"
+      forcePrompt: false
+      modelDisplayLabel: "ShuttleAI"
+      dropParams: ["user"]
+      iconURL: "https://raw.githubusercontent.com/LibreChat-AI/librechat-config-yaml/main/icons/DEEPNIGHT.png"
+
+
+fileConfig:
+   endpoints:
+     assistants:
+       fileLimit: 5
+       fileSizeLimit: 100  # Maximum size for an individual file in MB
+       totalSizeLimit: 500  # Maximum total size for all files in a single request in MB
+       supportedMimeTypes:
+         - "image/.*"
+         - "application/pdf"
+     openAI:
+       disabled: true  # Disables file uploading to the OpenAI endpoint
+     default:
+       totalSizeLimit: 20
+     google:
+       fileLimit: 20
+       fileSizeLimit: 50
+   serverFileSizeLimit: 100  # Global server file size limit in MB
+   avatarSizeLimit: 2  # Limit for user avatar image size in MB
+# See the Custom Configuration Guide for more information on Assistants Config:
+# https://www.librechat.ai/docs/configuration/librechat_yaml/object_structure/assistants_endpoint
