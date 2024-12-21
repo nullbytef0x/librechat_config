@@ -215,26 +215,6 @@ endpoints:
       dropParams: ["user"]
       iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/Workers-Dark.svg"
 
-    # Shard AI
-    - name: "ShardAI"
-      apiKey: "${shard_API_KEY}"
-      baseURL: "https://api.shard-ai.xyz/v1/"
-      models:
-        default: [
-          "gpt-3.5-turbo",
-          "gpt-3.5-turbo-1106",
-          ]
-        fetch: true
-      titleConvo: true
-      titleModel: "gpt-3.5-turbo"
-      summarize: true
-      summaryModel: "gpt-3.5-turbo"
-      forcePrompt: false
-      modelDisplayLabel: "ShardAI"
-      dropParams: ["user"]
-      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/Nim-Dark.svg"
-
-
 fileConfig:
    endpoints:
      assistants:
