@@ -187,7 +187,7 @@ endpoints:
     # Kraken AI
     - name: "KrakenAI"
       apiKey: "${kraken_API_KEY}"
-      baseURL: "https://api.cracked.systems/v1/chat/completions"
+      baseURL: "https://api.cracked.systems/v1/"
       models:
         default: [
           "gpt-3.5-turbo-16k",
@@ -205,7 +205,7 @@ endpoints:
           "qwen-2-72b",
           "command-r-plus",
           ]
-        fetch: false
+        fetch: true
       titleConvo: true
       titleModel: "chatgpt-4o-latest"
       summarize: true
