@@ -218,7 +218,7 @@ endpoints:
     # Shard AI
     - name: "ShardAI"
       apiKey: "${shard_API_KEY}"
-      baseURL: "https://api.shard-ai.xyz/v1/chat/completions/"
+      baseURL: "https://api.shard-ai.xyz/v1/"
       models:
         default: [
           "gpt-3.5-turbo",
