@@ -62,7 +62,7 @@ endpoints:
     agents:
       disableBuilder: false
       capabilities: ["execute_code", "file_search", "actions", "tools"]
-      
+
     azureOpenAI:
       titleModel: "gpt-4-turbo"
       assistants: true
@@ -76,6 +76,12 @@ endpoints:
           models:
             gpt-4o:
               deploymentName: gpt-4o
+
+    azureAssistants:
+      disableBuilder: false
+      capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
+      retrievalModels: ["gpt-4o"]
+      timeoutMs: 180000
     custom:
     # OpenRouter Example
     - name: 'OpenRouter'
