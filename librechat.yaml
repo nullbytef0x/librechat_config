@@ -60,24 +60,6 @@ endpoints:
   #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
   #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
   custom:
-    # Groq Example
-    - name: 'groq'
-      apiKey: '${GROQ_API_KEY}'
-      baseURL: 'https://api.groq.com/openai/v1/'
-      models:
-        default:
-          [
-            'llama3-70b-8192',
-            'llama3-8b-8192',
-            'llama2-70b-4096',
-            'mixtral-8x7b-32768',
-            'gemma-7b-it',
-          ]
-        fetch: false
-      titleConvo: true
-      titleModel: 'mixtral-8x7b-32768'
-      modelDisplayLabel: 'groq'
-
     # OpenRouter Example
     - name: 'OpenRouter'
       # For `apiKey` and `baseURL`, you can use environment variables that you define.
@@ -116,22 +98,36 @@ endpoints:
       dropParams: ["role", "content"]
       modelDisplayLabel: "Perplexity"
 
-    # ShuttleAI API
-    - name: "ShuttleAI"
-      apiKey: "${SHUTTLEAI_API_KEY}"
-      baseURL: "https://api.shuttleai.app/v1"
+    # zukijourney API
+    - name: "ZukiJourney"
+      apiKey: "${zuki_API_KEY}"
+      baseURL: "https://api.zukijourney.com/v1"
       models:
         default: [
-          "shuttle-2-turbo", "shuttle-turbo",
+          "learnlm-1.5-pro-experimental", 
+          "mistral-large",
+          "codestral",
+          "gemma-2-27b",
+          "gemma-2-9b",
+          "deepseek-coder-6.7b-base",
+          "hermes-2-pro-mistral-7b",
+          "grok-2",
+          "YandexGPT-4-Pro",
+          "falcon-7b-instruct",
+          "llama-3.3-70b-instruct",
+          "euryale-70b",
+          "deepseek-coder",
+          "llama-3.1-nemotron-70b-instruct",
           ]
         fetch: true
       titleConvo: true
-      titleModel: "shuttle-2-turbo"
+      titleModel: "gpt-3.5-turbo"
       summarize: false
-      summaryModel: "shuttle-2-turbo"
+      summaryModel: "gpt-3.5-turbo"
       forcePrompt: false
       modelDisplayLabel: "ShuttleAI"
       dropParams: ["user"]
+      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/Anaconda-Dark.svg"
 
     # Fresed API
     - name: "FresedGPT"
@@ -154,15 +150,46 @@ endpoints:
           "gemini-1.5-pro",
           "gemini-1.5-flash-latest",
           ]
-        fetch: true
+        fetch: false
       titleConvo: true
-      titleModel: "shuttle-2-turbo"
-      summarize: false
-      summaryModel: "shuttle-2-turbo"
+      titleModel: "chatgpt-4o-latest"
+      summarize: true
+      summaryModel: "chatgpt-4o-latest"
       forcePrompt: false
-      modelDisplayLabel: "ShuttleAI"
+      modelDisplayLabel: "FresedGPT"
       dropParams: ["user"]
-      iconURL: "https://raw.githubusercontent.com/LibreChat-AI/librechat-config-yaml/main/icons/DEEPNIGHT.png"
+      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/NestJS-Dark.svg"
+
+    # Kraken AI
+    - name: "KrakenAI"
+      apiKey: "${kraken_API_KEY}"
+      baseURL: "https://api.cracked.systems/v1/chat/completions"
+      models:
+        default: [
+          "gpt-3.5-turbo-16k",
+          "gpt-4",
+          "gpt-4o",
+          "gpt-4o-2024-11-20",
+          "llama-3.1-70b",
+          "llama-3.1-405b",
+          "claude-3-sonnet",
+          "claude-3.5-sonnet",
+          "claude-3-haiku",
+          "gemini-1.5-pro",
+          "gemini-1.5-flash",
+          "gemini-1.0-pro",
+          "qwen-2-72b",
+          "command-r-plus",
+          ]
+        fetch: false
+      titleConvo: true
+      titleModel: "chatgpt-4o-latest"
+      summarize: true
+      summaryModel: "chatgpt-4o-latest"
+      forcePrompt: false
+      modelDisplayLabel: "KrakenAI"
+      dropParams: ["user"]
+      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/Workers-Dark.svg"
 
 
 fileConfig:
