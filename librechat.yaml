@@ -178,9 +178,6 @@ fileConfig:
        disabled: true  # Disables file uploading to the OpenAI endpoint
      default:
        totalSizeLimit: 20
-     google:
-       fileLimit: 20
-       fileSizeLimit: 50
    serverFileSizeLimit: 100  # Global server file size limit in MB
    avatarSizeLimit: 2  # Limit for user avatar image size in MB
 # See the Custom Configuration Guide for more information on Assistants Config:
