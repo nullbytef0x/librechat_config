@@ -59,6 +59,20 @@ endpoints:
   #   retrievalModels: ["gpt-4-turbo-preview"]
   #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
   #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
+    agents:
+      disableBuilder: false
+      capabilities: ["execute_code", "file_search", "actions", "tools"]
+    azureOpenAI:
+      titleModel: "gpt-4-turbo"
+    plugins: false
+    groups:
+      - group: "my-westus" # arbitrary name
+        apiKey: "${EASTUS_API_KEY}"
+        instanceName: "startupai" # name of the resource group or instance
+        version: "2024-05-01-preview"
+        models:
+          gpt-4o:
+            deploymentName: gpt-4o
   custom:
     # OpenRouter Example
     - name: 'OpenRouter'
@@ -97,6 +111,7 @@ endpoints:
       forcePrompt: false
       dropParams: ["role", "content"]
       modelDisplayLabel: "Perplexity"
+      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/ActivityPub-Dark.svg"
 
     # zukijourney API
     - name: "ZukiJourney"
