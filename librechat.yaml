@@ -59,30 +59,25 @@ endpoints:
   #   retrievalModels: ["gpt-4-turbo-preview"]
   #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
   #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-    agents:
-      disableBuilder: false
-      capabilities: ["execute_code", "file_search", "actions", "tools"]
+  custom:
+    # Groq Example
+    - name: 'groq'
+      apiKey: '${GROQ_API_KEY}'
+      baseURL: 'https://api.groq.com/openai/v1/'
+      models:
+        default:
+          [
+            'llama3-70b-8192',
+            'llama3-8b-8192',
+            'llama2-70b-4096',
+            'mixtral-8x7b-32768',
+            'gemma-7b-it',
+          ]
+        fetch: false
+      titleConvo: true
+      titleModel: 'mixtral-8x7b-32768'
+      modelDisplayLabel: 'groq'
 
-    azureOpenAI:
-      titleModel: "gpt-4-turbo"
-      assistants: true
-      plugins: false
-      groups:
-        - group: "my-westus" # arbitrary name
-          apiKey: "${EASTUS_API_KEY}"
-          assistants: true
-          instanceName: "startupai" # name of the resource group or instance
-          version: "2024-05-01-preview"
-          models:
-            gpt-4o:
-              deploymentName: gpt-4o
-
-    azureAssistants:
-      disableBuilder: false
-      capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-      retrievalModels: ["gpt-4o"]
-      timeoutMs: 180000
-    custom:
     # OpenRouter Example
     - name: 'OpenRouter'
       # For `apiKey` and `baseURL`, you can use environment variables that you define.
@@ -118,40 +113,25 @@ endpoints:
       summarize: false
       summaryModel: "claude-3-haiku-20240307"
       forcePrompt: false
-      dropParams: ["role", "content"]
+      addParams: ["role", "content"]
       modelDisplayLabel: "Perplexity"
-      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/ActivityPub-Dark.svg"
 
-    # zukijourney API
-    - name: "ZukiJourney"
-      apiKey: "${zuki_API_KEY}"
-      baseURL: "https://api.zukijourney.com/v1"
+    # ShuttleAI API
+    - name: "ShuttleAI"
+      apiKey: "${SHUTTLEAI_API_KEY}"
+      baseURL: "https://api.shuttleai.app/v1"
       models:
         default: [
-          "learnlm-1.5-pro-experimental", 
-          "mistral-large",
-          "codestral",
-          "gemma-2-27b",
-          "gemma-2-9b",
-          "deepseek-coder-6.7b-base",
-          "hermes-2-pro-mistral-7b",
-          "grok-2",
-          "YandexGPT-4-Pro",
-          "falcon-7b-instruct",
-          "llama-3.3-70b-instruct",
-          "euryale-70b",
-          "deepseek-coder",
-          "llama-3.1-nemotron-70b-instruct",
+          "shuttle-2-turbo", "shuttle-turbo",
           ]
         fetch: true
       titleConvo: true
-      titleModel: "gpt-3.5-turbo"
+      titleModel: "shuttle-2-turbo"
       summarize: false
-      summaryModel: "gpt-3.5-turbo"
+      summaryModel: "shuttle-2-turbo"
       forcePrompt: false
       modelDisplayLabel: "ShuttleAI"
       dropParams: ["user"]
-      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/Anaconda-Dark.svg"
 
     # Fresed API
     - name: "FresedGPT"
@@ -174,46 +154,16 @@ endpoints:
           "gemini-1.5-pro",
           "gemini-1.5-flash-latest",
           ]
-        fetch: false
-      titleConvo: true
-      titleModel: "chatgpt-4o-latest"
-      summarize: true
-      summaryModel: "chatgpt-4o-latest"
-      forcePrompt: false
-      modelDisplayLabel: "FresedGPT"
-      dropParams: ["user"]
-      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/NestJS-Dark.svg"
-
-    # Kraken AI
-    - name: "KrakenAI"
-      apiKey: "${kraken_API_KEY}"
-      baseURL: "https://api.cracked.systems/v1/"
-      models:
-        default: [
-          "gpt-3.5-turbo-16k",
-          "gpt-4",
-          "gpt-4o",
-          "gpt-4o-2024-11-20",
-          "llama-3.1-70b",
-          "llama-3.1-405b",
-          "claude-3-sonnet",
-          "claude-3.5-sonnet",
-          "claude-3-haiku",
-          "gemini-1.5-pro",
-          "gemini-1.5-flash",
-          "gemini-1.0-pro",
-          "qwen-2-72b",
-          "command-r-plus",
-          ]
         fetch: true
       titleConvo: true
-      titleModel: "chatgpt-4o-latest"
-      summarize: true
-      summaryModel: "chatgpt-4o-latest"
+      titleModel: "shuttle-2-turbo"
+      summarize: false
+      summaryModel: "shuttle-2-turbo"
       forcePrompt: false
-      modelDisplayLabel: "KrakenAI"
+      modelDisplayLabel: "ShuttleAI"
       dropParams: ["user"]
-      iconURL: "https://raw.githubusercontent.com/Shootmir/skill-icons/refs/heads/main/icons/Workers-Dark.svg"
+      iconURL: "https://raw.githubusercontent.com/LibreChat-AI/librechat-config-yaml/main/icons/DEEPNIGHT.png"
+
 
 fileConfig:
    endpoints:
@@ -224,13 +174,84 @@ fileConfig:
        supportedMimeTypes:
          - "image/.*"
          - "application/pdf"
+         - "text/x-c"
+         - "text/x-c++"
+         - "text/x-csharp"
+         - "text/css"
+         - "application/msword"
+         - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+         - "text/x-golang"
+         - "text/html"
+         - "text/x-java"
+         - "text/javascript"
+         - "application/json"
+         - "text/markdown"
+         - "text/x-php"
+         - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+         - "text/x-python"
+         - "text/x-script.python"
+         - "text/x-ruby"
+         - "application/x-sh"
+         - "text/x-tex"
+         - "application/typescript"
+         - "text/plain"
      openAI:
-       disabled: true  # Disables file uploading to the OpenAI endpoint
+       disabled: false
+       totalSizeLimit: 0
+       supportedMimeTypes:
+         - "image/.*"
+         - "application/pdf"
+         - "text/x-c"
+         - "text/x-c++"
+         - "text/x-csharp"
+         - "text/css"
+         - "application/msword"
+         - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+         - "text/x-golang"
+         - "text/html"
+         - "text/x-java"
+         - "text/javascript"
+         - "application/json"
+         - "text/markdown"
+         - "text/x-php"
+         - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+         - "text/x-python"
+         - "text/x-script.python"
+         - "text/x-ruby"
+         - "application/x-sh"
+         - "text/x-tex"
+         - "application/typescript"
+         - "text/plain"
+         
      default:
-       totalSizeLimit: 20
+       totalSizeLimit: 0
+       supportedMimeTypes:
+         - "image/.*"
+         - "application/pdf"
+         - "text/x-c"
+         - "text/x-c++"
+         - "text/x-csharp"
+         - "text/css"
+         - "application/msword"
+         - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+         - "text/x-golang"
+         - "text/html"
+         - "text/x-java"
+         - "text/javascript"
+         - "application/json"
+         - "text/markdown"
+         - "text/x-php"
+         - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+         - "text/x-python"
+         - "text/x-script.python"
+         - "text/x-ruby"
+         - "application/x-sh"
+         - "text/x-tex"
+         - "application/typescript"
+         - "text/plain"
      google:
-       fileLimit: 20
-       fileSizeLimit: 50
+       fileLimit: 50
+       fileSizeLimit: 100
    serverFileSizeLimit: 100  # Global server file size limit in MB
    avatarSizeLimit: 2  # Limit for user avatar image size in MB
 # See the Custom Configuration Guide for more information on Assistants Config:
