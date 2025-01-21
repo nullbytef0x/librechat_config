@@ -273,6 +273,7 @@ fileConfig:
          - "text/x-tex"
          - "application/typescript"
          - "text/plain"
+         - "application/vnd.tcpdump.pcap"
      default:
        totalSizeLimit: 100
        supportedMimeTypes:
@@ -299,6 +300,7 @@ fileConfig:
          - "text/x-tex"
          - "application/typescript"
          - "text/plain"
+         - "application/vnd.tcpdump.pcap"
      google:
        fileLimit: 50
        fileSizeLimit: 100
