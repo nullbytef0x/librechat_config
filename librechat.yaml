@@ -63,7 +63,7 @@ actions:
 # Example MCP Servers Object Structure
 mcpServers:
   fetch: {
-    "command": "uvx",
+    "command": "python",
     "args": ["mcp-server-fetch"]
   }
   puppeteer:
