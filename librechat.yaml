@@ -62,19 +62,16 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers:
+  fetch: {
+    "command": "uvx",
+    "args": ["mcp-server-fetch"]
+  }
   puppeteer:
     type: stdio
     command: npx
     args:
       - -y
       - "@modelcontextprotocol/server-puppeteer"
-  everything: {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-everything"
-      ]
-    }
 
 # Definition of custom endpoints
 endpoints:
