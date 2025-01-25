@@ -68,6 +68,13 @@ mcpServers:
     args:
       - -y
       - "@modelcontextprotocol/server-puppeteer"
+  everything: {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+      ]
+    }
 
 # Definition of custom endpoints
 endpoints:
@@ -301,7 +308,7 @@ endpoints:
           "pplx-turbo",
           "llama-3.1-405b",
           ]
-        fetch: true
+        fetch: false
       titleConvo: true
       titleModel: "chatgpt-4o-latest"
       summarize: true
