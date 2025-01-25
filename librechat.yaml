@@ -62,6 +62,9 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers:
+  everything:
+    # type: sse # type can optionally be omitted
+    url: http://localhost:3000/sse
   filesystem:
     command: npx
     args:
