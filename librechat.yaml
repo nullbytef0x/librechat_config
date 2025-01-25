@@ -67,9 +67,7 @@ mcpServers:
     args:
         - -y
         - "@modelcontextprotocol/server-filesystem"
-        - /home/hash/LibreChat/
-    iconPath: /home/hash/LibreChat/client/public/assets/logo.svg
-    
+        - /home/hash/LibreChat/  
   puppeteer:
     type: stdio
     command: npx
