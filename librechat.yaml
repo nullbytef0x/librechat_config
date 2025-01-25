@@ -62,10 +62,14 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers:
-  fetch: {
-    "command": "python",
-    "args": ["mcp-server-fetch"]
-  }
+  filesystem:
+    command: npx
+    args:
+        - -y
+        - "@modelcontextprotocol/server-filesystem"
+        - /home/hash/LibreChat/
+    iconPath: /home/hash/LibreChat/client/public/assets/logo.svg
+    
   puppeteer:
     type: stdio
     command: npx
