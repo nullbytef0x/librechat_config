@@ -62,9 +62,6 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers:
-  everything:
-    # type: sse # type can optionally be omitted
-    url: http://localhost:3001/sse
   puppeteer:
     type: stdio
     command: npx
@@ -77,14 +74,8 @@ mcpServers:
     args:
       - -y
       - "@modelcontextprotocol/server-filesystem"
-      - /home/user/LibreChat/
-    iconPath: /home/user/LibreChat/client/public/assets/logo.svg
-  mcp-obsidian:
-    command: npx
-    args:
-      - -y
-      - "mcp-obsidian"
-      - /path/to/obsidian/vault
+      - /home/hash/LibreChat/
+    iconPath: /home/hash/LibreChat/client/public/assets/logo.svg
 
 # Definition of custom endpoints
 endpoints:
@@ -419,4 +410,3 @@ fileConfig:
    avatarSizeLimit: 2  # Limit for user avatar image size in MB
 # See the Custom Configuration Guide for more information on Assistants Config:
 # https://www.librechat.ai/docs/configuration/librechat_yaml/object_structure/assistants_endpoint
-
