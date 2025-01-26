@@ -70,7 +70,6 @@ mcpServers:
         "/app/api"
       ]
     }
-
   mcp-hfspace: {
       "command": "npx",
       "args": [
@@ -88,10 +87,10 @@ mcpServers:
         "evalstate/Sound-AI-SFX",
         "styletts2/styletts2",
         "dbaranchuk/Switti",
-        "--work-dir=/app/api"
+        "--work-dir=/app/api",
+        "prithivMLmods/Mistral-7B-Instruct-v0.3"
       ]
     }
-  
 
 
 # Definition of custom endpoints
@@ -115,7 +114,7 @@ endpoints:
   #   (optional) Disable the builder interface for agents
      disableBuilder: false
   #   (optional) Agent Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-     capabilities: ["execute_code", "file_search", "actions", "tools"]
+     capabilities: ["file_search", "actions", "tools"]
    azureOpenAI:
       titleModel: "gpt-4-turbo"
       assistants: true
