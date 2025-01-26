@@ -91,6 +91,13 @@ mcpServers:
         "--work-dir=/app/api"
       ]
     }
+  sequential-thinking: {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
   
 # Definition of custom endpoints
 endpoints:
