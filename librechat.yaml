@@ -62,11 +62,6 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers: 
-  memory: {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"]
-    }
-    
   filesystem: {
       "command": "npx",
       "args": [
@@ -95,6 +90,16 @@ mcpServers:
         "dbaranchuk/Switti",
         "--work-dir=/app/api"
       ]
+    }
+  searxng: {
+      "command": "npx",
+      "args": [
+        "-y"
+        "/home/hash/mcp-searxng/"
+      ],
+      "env": {
+        "SEARXNG_URL": "https://opnxng.com/"
+      }
     }
 
 # Definition of custom endpoints
