@@ -84,7 +84,6 @@ mcpServers:
         "evalstate/parler_tts",
         "styletts2/styletts2",
         "dbaranchuk/Switti",
-        "--work-dir=/home/hash/LibreChat/mfspace",
       ]
       
     }
