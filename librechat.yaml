@@ -83,8 +83,8 @@ mcpServers:
         "evalstate/Sound-AI-SFX",
         "styletts2/styletts2",
         "dbaranchuk/Switti",
-        "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
-        "--work-dir=/app/mfspace"
+        "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF
+        "--work-dir=/app/api"
       ]
     }
   filesystem: {
@@ -92,7 +92,7 @@ mcpServers:
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/app/mfspace"
+        "/app/api"
       ]
     }
 
