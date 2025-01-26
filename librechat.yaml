@@ -83,7 +83,7 @@ mcpServers:
         "evalstate/Sound-AI-SFX",
         "styletts2/styletts2",
         "dbaranchuk/Switti",
-        "--work-dir=/home/hash/LibreChat/"
+        "--work-dir=/app/api"
       ]
       
     }
