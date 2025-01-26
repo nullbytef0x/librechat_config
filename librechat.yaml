@@ -83,10 +83,18 @@ mcpServers:
         "evalstate/Sound-AI-SFX",
         "styletts2/styletts2",
         "dbaranchuk/Switti",
-        "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
         "--work-dir=/app/api"
       ]
     }
+  filesystem: {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/app/api"
+      ]
+    }
+    
   jinaai-grounding: { 
       "command": "node",
       "args": [
@@ -97,6 +105,7 @@ mcpServers:
                 "JINAAI_API_KEY": "jina_2bea90d08408437b9b18deb86ef1fb555oZKfEbv26Ek_aJRx2Cyt3Vox9tY"
 	  }
     }
+  
 
 # Definition of custom endpoints
 endpoints:
