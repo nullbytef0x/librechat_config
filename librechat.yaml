@@ -66,6 +66,18 @@ mcpServers:
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"]
     }
+    
+  mcp-hfspace: {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@llmindset/mcp-hfspace",
+        "--work-dir=~/mcp-files/",
+        "--HF_TOKEN=hf_your_token_here",
+        "black-forest-labs/FLUX.1-schnell",
+        "Qwen/Qwen2-72B-Instruct"
+      ]
+    }
 
 # Definition of custom endpoints
 endpoints:
