@@ -83,9 +83,17 @@ mcpServers:
         "evalstate/Sound-AI-SFX",
         "styletts2/styletts2",
         "dbaranchuk/Switti",
-        "--work-dir=/app/api"
+        "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+        "--work-dir=/app/api/mfspace"
       ]
-      
+    }
+  filesystem: {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/app/api/mfspace"
+      ]
     }
 
 # Definition of custom endpoints
