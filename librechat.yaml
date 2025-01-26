@@ -68,7 +68,8 @@ mcpServers:
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/app/api"
-      ]
+      ],
+      "timeout": 60000
     }
   mcp-hfspace: {
       "command": "npx",
@@ -89,7 +90,8 @@ mcpServers:
         "dbaranchuk/Switti",
         "--work-dir=/app/api",
         "prithivMLmods/Mistral-7B-Instruct-v0.3"
-      ]
+      ],
+      "timeout": 60000
     }
 
 
