@@ -73,8 +73,13 @@ mcpServers:
         "@llmindset/mcp-hfspace",
         "shuttleai/shuttle-jaguar",
         "styletts2/styletts2",
-        "Qwen/QVQ-72B-preview"
+        "Qwen/Qwen2.5-72B-Instruct",
+        "black-forest-labs/FLUX.1-schnell",
+        "Inspyrenet-Rembg",
+        "fantaxy/Sound-AI-SFX",
+        "haoheliu/audioldm2-text2audio-text2music"
       ]
+      
     }
 
 # Definition of custom endpoints
