@@ -94,7 +94,7 @@ mcpServers:
   searxng: {
       "command": "npx",
       "args": [
-        "-y"
+        "-y",
         "/home/hash/mcp-searxng/"
       ],
       "env": {
