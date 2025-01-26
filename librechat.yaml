@@ -94,17 +94,6 @@ mcpServers:
         "/app/api"
       ]
     }
-    
-  jinaai-grounding: { 
-      "command": "node",
-      "args": [
-        "-y", "mcp-jinaai-grounding"
-        ],
-      "env": {
-				
-                "JINAAI_API_KEY": "jina_2bea90d08408437b9b18deb86ef1fb555oZKfEbv26Ek_aJRx2Cyt3Vox9tY"
-	  }
-    }
   sequential-thinking: {
       "command": "npx",
       "args": [
