@@ -91,12 +91,9 @@ mcpServers:
         "--work-dir=/app/api"
       ]
     }
-  sequential-thinking: {
+  memory: {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
     }
   
 # Definition of custom endpoints
