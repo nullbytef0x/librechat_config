@@ -62,6 +62,11 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers: 
+  memory: {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    }
+    
   filesystem: {
       "command": "npx",
       "args": [
@@ -91,16 +96,15 @@ mcpServers:
         "--work-dir=/app/api"
       ]
     }
-  searxng: {
-      "command": "uv", 
+
+  sequential-thinking: {
+      "command": "npx",
       "args": [
-        "--project",
-        "/home/hash/MCP-searxng",
-        "run",
-        "/home/hash/MCP-searxng/src/mcp_searxng/main.py"
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
       ]
     }
-  
+    
 # Definition of custom endpoints
 endpoints:
   # assistants:
