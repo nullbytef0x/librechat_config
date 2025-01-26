@@ -62,6 +62,21 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers: 
+  filesystem: {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/app/api"
+      ]
+    }
+  sequential-thinking: {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
   memory: {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"]
@@ -86,23 +101,7 @@ mcpServers:
         "--work-dir=/app/api"
       ]
     }
-  filesystem: {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/app/api"
-      ]
-    }
-  sequential-thinking: {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
-    }
   
-
 # Definition of custom endpoints
 endpoints:
   # assistants:
