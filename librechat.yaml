@@ -309,7 +309,7 @@ endpoints:
       forcePrompt: false
       modelDisplayLabel:  "ElectronHub"
       dropParams: ["user"]
-      iconURL: "https://raw.githubusercontent.com/tandpfun/skill-icons/refs/heads/main/icons/NestJS-Dark.svg"
+      iconURL: "https://raw.githubusercontent.com/tandpfun/skill-icons/refs/heads/main/icons/RaspberryPi-Dark.svg"
 
     # Kraken AI
     - name: "KrakenAI"
