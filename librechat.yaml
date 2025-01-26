@@ -62,7 +62,7 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers: 
-    memory: {
+  memory: {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"]
     }
