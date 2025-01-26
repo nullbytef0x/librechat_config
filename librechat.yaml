@@ -81,10 +81,8 @@ mcpServers:
         "shuttleai/shuttle-3.1-aesthetic",
         "huggingchat/document-parser",
         "evalstate/Sound-AI-SFX",
-        "evalstate/parler_tts",
         "styletts2/styletts2",
         "dbaranchuk/Switti",
-        "--desktop-mode=false",
         "--hf-token=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"
       ]
       
