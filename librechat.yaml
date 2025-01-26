@@ -98,14 +98,6 @@ mcpServers:
       "args": ["-y", "@modelcontextprotocol/server-memory"],
       "timeout": 60000
     }
-  sequential-thinking: {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "timeout": 60000
-    }
 
 
 # Definition of custom endpoints
