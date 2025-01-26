@@ -73,7 +73,20 @@ mcpServers:
         "@llmindset/mcp-hfspace",
         "styletts2/styletts2",
         "Qwen/Qwen2.5-72B-Instruct",
-        "deepseek-ai/DeepSeek-VL-7B"
+        "Qwen/Qwen2-72B-Instruct",      
+        "Qwen/QVQ-72B-preview",
+        "Qwen/Qwen2.5-72B-Instruct",
+        "evalstate/FLUX.1-schnell",
+        "hf-audio/whisper-large-v3",
+        "shuttleai/shuttle-3.1-aesthetic",
+        "huggingchat/document-parser",
+        "evalstate/Sound-AI-SFX",
+        "evalstate/parler_tts",
+        "styletts2/styletts2",
+        "dbaranchuk/Switti",
+        "--work-dir=x:/temp/mcp-store",
+        "--desktop-mode=false",
+        "--hf-token=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"
       ]
       
     }
