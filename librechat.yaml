@@ -68,10 +68,6 @@ mcpServers:
     args:
       - -y
       - "@modelcontextprotocol/server-puppeteer"
-  playwright: {
-      "command": "npm",
-      "args": ["-y", "@executeautomation/playwright-mcp-server"]
-    }
 
 # Definition of custom endpoints
 endpoints:
