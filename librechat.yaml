@@ -66,23 +66,6 @@ mcpServers:
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"]
     }
-    
-  mcp-installer: {
-      "command": "npx",
-      "args": [
-        "@anaisbetts/mcp-installer"
-      ]
-    }
-  mcp-hfspace: {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@llmindset/mcp-hfspace",
-        "shuttleai/shuttle-jaguar",
-        "styletts2/styletts2",
-        "Qwen/QVQ-72B-preview"
-      ]
-    }
 
 # Definition of custom endpoints
 endpoints:
