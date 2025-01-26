@@ -62,12 +62,10 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers: 
-  mcpServers: {
-    "memory": {
+    memory: {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"]
     }
-  }
 
 # Definition of custom endpoints
 endpoints:
