@@ -73,8 +73,6 @@ mcpServers:
         "@llmindset/mcp-hfspace",
         "styletts2/styletts2",
         "Qwen/Qwen2.5-72B-Instruct",
-        "gokaygokay/Inspyrenet-Rembg",
-        "fantaxy/Sound-AI-SFX",
         "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
       ]
       
