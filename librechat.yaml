@@ -91,9 +91,14 @@ mcpServers:
         "--work-dir=/app/api"
       ]
     }
-  memory: {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"]
+  searxng: {
+      "command": "uv", 
+      "args": [
+        "--project",
+        "/home/hash/MCP-searxng",
+        "run",
+        "/home/hash/MCP-searxng/src/mcp_searxng/main.py"
+      ]
     }
   
 # Definition of custom endpoints
