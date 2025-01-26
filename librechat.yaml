@@ -91,16 +91,8 @@ mcpServers:
         "--work-dir=/app/api"
       ]
     }
-  searxng: {
-      "command": "npx",
-      "args": [
-        "-y",
-        "/home/hash/mcp-searxng/"
-      ],
-      "env": {
-        "SEARXNG_URL": "https://opnxng.com/"
-      }
-    }
+  
+
 
 # Definition of custom endpoints
 endpoints:
