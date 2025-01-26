@@ -62,17 +62,12 @@ actions:
 
 # Example MCP Servers Object Structure
 mcpServers: 
-  mcp-hfspace: {
+  mcpServers: {
+    "memory": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@llmindset/mcp-hfspace",
-        "--work-dir=/Users/evalstate/mcp-store",
-        "shuttleai/shuttle-jaguar",
-        "styletts2/styletts2",
-        "Qwen/QVQ-72B-preview"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
     }
+  }
 
 # Definition of custom endpoints
 endpoints:
@@ -407,3 +402,4 @@ fileConfig:
    avatarSizeLimit: 2  # Limit for user avatar image size in MB
 # See the Custom Configuration Guide for more information on Assistants Config:
 # https://www.librechat.ai/docs/configuration/librechat_yaml/object_structure/assistants_endpoint
+
