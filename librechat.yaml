@@ -82,8 +82,7 @@ mcpServers:
         "huggingchat/document-parser",
         "evalstate/Sound-AI-SFX",
         "styletts2/styletts2",
-        "dbaranchuk/Switti",
-        "--hf-token=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"
+        "dbaranchuk/Switti"
       ]
       
     }
