@@ -61,22 +61,17 @@ actions:
     - "google.com"
 
 # Example MCP Servers Object Structure
-mcpServers:
-  everything:
-    # type: sse # type can optionally be omitted
-    url: http://localhost:3000/sse
-  filesystem:
-    command: npx
-    args:
-        - -y
-        - "@modelcontextprotocol/server-filesystem"
-        - /home/hash/LibreChat/  
+mcpServers: 
   puppeteer:
     type: stdio
     command: npx
     args:
       - -y
       - "@modelcontextprotocol/server-puppeteer"
+  playwright: {
+      "command": "npm",
+      "args": ["-y", "@executeautomation/playwright-mcp-server"]
+    }
 
 # Definition of custom endpoints
 endpoints:
