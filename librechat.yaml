@@ -139,20 +139,42 @@ endpoints:
       
    custom:
     # OpenRouter Example
-    - name: 'OpenRouter'
+    - name: "OpenRouter"
       # For `apiKey` and `baseURL`, you can use environment variables that you define.
       # recommended environment variables:
-      # Known issue: you should not use `OPENROUTER_API_KEY` as it will then override the `openAI` endpoint to use OpenRouter as well.
-      apiKey: '${OPENROUTER_KEY}'
-      baseURL: 'https://openrouter.ai/api/v1'
+      apiKey: "${OPENROUTER_KEY}" # NOT OPENROUTER_API_KEY
+      baseURL: "https://openrouter.ai/api/v1"
       models:
-        default: ['meta-llama/llama-3-70b-instruct']
+        default: ["meta-llama/llama-3-70b-instruct"]
         fetch: true
       titleConvo: true
-      titleModel: 'meta-llama/llama-3-70b-instruct'
+      titleModel: "meta-llama/llama-3-70b-instruct"
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
-      dropParams: ['stop']
-      modelDisplayLabel: 'OpenRouter'
+      dropParams: ["stop"]
+      modelDisplayLabel: "OpenRouter"
+	
+	- name: 'HuggingFace'
+      apiKey: '${HUGGINGFACE_TOKEN}'
+      baseURL: 'https://api-inference.huggingface.co/v1'
+      models:
+        default: [
+          "codellama/CodeLlama-34b-Instruct-hf",
+          "google/gemma-1.1-2b-it",
+          "google/gemma-1.1-7b-it",
+          "HuggingFaceH4/starchat2-15b-v0.1",
+          "HuggingFaceH4/zephyr-7b-beta",
+          "meta-llama/Meta-Llama-3-8B-Instruct",
+          "microsoft/Phi-3-mini-4k-instruct",
+          "mistralai/Mistral-7B-Instruct-v0.1",
+          "mistralai/Mistral-7B-Instruct-v0.2",
+          "mistralai/Mixtral-8x7B-Instruct-v0.1",
+          "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO",
+        ]
+        fetch: true
+      titleConvo: true
+      titleModel: "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO"
+      dropParams: ["top_p"]
+      modelDisplayLabel: "HuggingFace"
       
     # Portkey AI Example
     - name: "Portkey"
@@ -215,6 +237,11 @@ endpoints:
           "euryale-70b",
           "deepseek-coder",
           "llama-3.1-nemotron-70b-instruct",
+		  "qvq-72b-preview",
+		  "deepseek-coder-6.7b-base",
+		  "deepseek-coder-6.7b-instruct",
+		  "deepseek-reasoner",
+		  "mistral-large",
           ]
         fetch: true
       titleConvo: true
@@ -275,6 +302,8 @@ endpoints:
           "jamba-1.5-large",
           "jamba-1.5-mini",
           "gemini-exp-1206",
+		  "gemini-2.0-flash-lite-preview-02-05",
+		  "gemini-2.0-pro-exp-02-05",
           "gemini-1.5-pro",
           "claude-3-opus-20240229",
           "claude-3-sonnet-20240229",
@@ -300,6 +329,8 @@ endpoints:
           "qwen-2.5-7b-instruct",
           "nova-lite-v1",
           "nova-pro-v1",
+		  "o3-mini-online",
+		  
           ]
         fetch: false
       titleConvo: true
@@ -428,4 +459,3 @@ fileConfig:
    avatarSizeLimit: 2  # Limit for user avatar image size in MB
 # See the Custom Configuration Guide for more information on Assistants Config:
 # https://www.librechat.ai/docs/configuration/librechat_yaml/object_structure/assistants_endpoint
-
